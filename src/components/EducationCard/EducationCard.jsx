@@ -17,7 +17,7 @@ const EducationCard = ({
   const { theme } = useTheme();
   const isLight = theme === "light";
 
-  // ✅ Badge gradient configuration
+  // Badge gradient configuration
   const statusConfig =
     status === "Ongoing"
       ? {
@@ -42,7 +42,6 @@ const EducationCard = ({
             ? "bg-white border-[#667eea]/30 drop-shadow-lg/30 shadow-gray-600 hover:bg-gray-100"
             : "bg-gray-900 border-[#667eea]/30 drop-shadow-lg/30 shadow-gray-600 hover:bg-gray-700 hover:shadow-[#667eea]/20"
         }
-        /* 🚀 FIX 1: Make the card a Flex container to enable bottom alignment */
         flex flex-col h-full 
         `}
     >

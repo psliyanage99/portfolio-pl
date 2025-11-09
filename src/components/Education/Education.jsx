@@ -33,9 +33,9 @@ const Education = () => {
   return (
     <section
       id="education"
-      className={`education-background relative min-h-screen py-20 px-6 overflow-hidden transition-colors duration-500 ${sectionBg}`}
+      className={`education-background relative min-h-screen py-20 px-6  transition-colors duration-500 ${sectionBg}`}
     >
-      <div className="container mx-auto max-w-8xl relative z-10 px-6 sm:px-6 md:px-8 lg:px-8 md:flex-row items-start justify-between md:py-16 lg:py-12">
+      <div className="container mx-auto max-w-8xl relative z-10  md:px-8 lg:px-8   md:py-16 lg:py-12">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h1 className={`text-4xl font-bold capitalize ${headingText}`}>

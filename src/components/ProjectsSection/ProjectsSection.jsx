@@ -20,7 +20,7 @@ const ProjectsSection = () => {
         isLight ? "bg-gray-50 text-gray-900" : "bg-[#010412] text-white"
       }`}
     >
-      <div className="container mx-auto max-w-8xl relative z-10 px-6 md:px-8 lg:px-8 md:py-16 lg:py-12">
+      <div className="container mx-auto max-w-8xl relative z-10 md:px-8 lg:px-8 md:py-16 lg:py-12">
         
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
