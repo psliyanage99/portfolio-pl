@@ -1,0 +1,216 @@
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #010412; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+}
+
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.binary-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0.1;
+}
+
+.binary-column {
+    position: absolute;
+    top: -100%;
+    font-size: 20px;
+    color: #9333ea; 
+    animation: binaryFall linear infinite;
+    text-shadow: 0 0 5px #9333ea;
+}
+
+@keyframes binaryFall {
+    to {
+        top: 100%;
+    }
+}
+
+
+.terminal-container {
+    background: rgba(10, 14, 39, 0.9);
+    border: 2px solid #9333ea; 
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.3); 
+    max-width: 600px;
+    width: 90%;
+}
+
+.terminal-header {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.terminal-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.btn-close { background: #ff5f56; }
+.btn-minimize { background: #ffbd2e; }
+.btn-maximize { background: #27c93f; }
+
+.code-icon {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brackets {
+    font-size: 80px;
+    color: #9333ea; 
+    text-shadow: 0 0 20px #9333ea;
+    animation: glitch 2s infinite;
+    display: inline-block;
+}
+
+@keyframes glitch {
+    0%, 100% { text-shadow: 0 0 20px #9333ea; }
+    25% { text-shadow: -2px 0 20px #9333ea, 2px 0 20px #f093fb; } 
+    50% { text-shadow: 2px 0 20px #9333ea, -2px 0 20px #667eea; } 
+    75% { text-shadow: 0 0 20px #9333ea; }
+}
+
+
+.terminal-output {
+    margin-bottom: 25px;
+}
+
+.terminal-line {
+    color: #9333ea; 
+    font-size: 14px;
+    margin: 8px 0;
+    opacity: 0;
+    animation: typeIn 0.3s forwards;
+}
+
+@keyframes typeIn {
+    to { opacity: 1; }
+}
+
+.prompt {
+    color: #f093fb; 
+    margin-right: 8px;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: #9333ea; 
+    animation: blink 1s infinite;
+    margin-left: 4px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.status-messages {
+    margin-top: 20px;
+    max-height: 100px; 
+    overflow: hidden;
+}
+
+.status-line {
+    color: #888;
+    font-size: 12px;
+    margin: 5px 0;
+    opacity: 0;
+    animation: fadeInUp 0.5s forwards;
+}
+
+
+.status-line.success { color: #9333ea; } 
+.status-line.info { color: #667eea; } 
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.loading-container {
+    margin: 25px 0;
+}
+
+.loading-label {
+    color: #667eea; 
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.percentage {
+    color: #9333ea; 
+    font-weight: bold;
+}
+
+.progress-bar-container {
+    height: 20px;
+    background: rgba(139, 92, 246, 0.1); 
+    border: 1px solid #9333ea; 
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #9333ea 0%, #667eea 50%, #f093fb 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite; 
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5); 
+    border-radius: 4px;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* --- FLOATING TECH ICONS --- */
+.tech-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.tech-icon {
+    position: absolute;
+    font-size: 40px;
+    color: #9333ea; 
+    opacity: 0.15;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(10deg); }
+}
