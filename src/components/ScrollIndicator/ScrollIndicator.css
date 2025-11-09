@@ -1,0 +1,198 @@
+/* --- Global CSS for Liquid Scroll Indicator --- */
+
+/* Keyframes for the Liquid Drop Bounce */
+@keyframes drop-bounce {
+    0%, 100% {
+        transform: translateY(0) scaleY(1);
+    }
+    25% {
+        transform: translateY(-15px) scaleY(1.1);
+    }
+    50% {
+        transform: translateY(0) scaleY(0.95);
+    }
+    75% {
+        transform: translateY(-8px) scaleY(1.05);
+    }
+}
+
+/* Keyframes for the Outer Glow Pulse */
+@keyframes glow-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+/* Keyframes for the Ripple Effect */
+@keyframes ripple-expand {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+}
+
+/* Keyframes for Floating Particles */
+@keyframes float-up {
+    0% {
+        bottom: -10px;
+        opacity: 0;
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 100px;
+        opacity: 0;
+        transform: translateY(-20px) scale(0.5);
+    }
+}
+
+/* Keyframes for Chevron Slide */
+@keyframes chevron-slide {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+
+/* --- Structural Element Styling (Violet Theme) --- */
+
+/* Liquid Drop */
+.custom-liquid-drop {
+    /* Violet/Purple Gradient */
+    background: linear-gradient(180deg, #9333ea 0%, #7c3aed 100%); 
+    
+    /* Custom tear-drop shape */
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: drop-bounce 2s infinite ease-in-out;
+    box-shadow: 
+        0 0 20px rgba(102, 126, 234, 0.6), /* Blueish glow for atmosphere */
+        inset 0 -5px 10px rgba(0, 0, 0, 0.2),
+        inset 0 5px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Light spot ::before element */
+.custom-liquid-drop::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+/* Outer Glow Circle */
+.custom-glow-circle {
+    /* Violet Radial Glow */
+    background: radial-gradient(circle, rgba(147, 51, 234, 0.3), transparent 70%); 
+    animation: glow-pulse 3s infinite ease-in-out;
+}
+
+/* Ripple Effect */
+.custom-ripple {
+    width: 40px;
+    height: 8px;
+    /* Violet Ripple Color */
+    background: rgba(139, 92, 246, 0.4); 
+    border-radius: 50%;
+    animation: ripple-expand 2s infinite ease-out;
+}
+
+/* Floating Particles */
+.custom-particles-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: visible; 
+}
+
+.custom-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    /* Violet Particle Color */
+    background: rgba(139, 92, 246, 0.8); 
+    border-radius: 50%;
+    animation: float-up 3s infinite ease-in-out;
+}
+
+/* Chevron Arrows Container */
+.custom-chevron-container {
+    gap: 8px;
+    width: 30px;
+}
+
+/* Chevron Arrows (The actual moving bars) */
+.custom-chevron {
+    width: 30px;
+    height: 8px;
+    opacity: 0;
+    animation: chevron-slide 3s infinite;
+    position: relative;
+}
+
+/* Chevron Lines */
+.custom-chevron::before,
+.custom-chevron::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    /* Violet Line Color */
+    background: rgba(139, 92, 246, 0.8); 
+    border-radius: 2px;
+}
+
+.custom-chevron::before {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: right;
+}
+
+.custom-chevron::after {
+    right: 0;
+    transform: rotate(-45deg);
+    transform-origin: left;
+}
+
+/* Applying delays to chevrons */
+.custom-chevron:nth-child(1) { animation-delay: 0s; }
+.custom-chevron:nth-child(2) { animation-delay: 0.3s; }
+.custom-chevron:nth-child(3) { animation-delay: 0.6s; }
+
+
+/* Scroll Text Styling */
+.custom-scroll-text {
+    /* Violet Text Color */
+    color: rgba(139, 92, 246, 0.9); 
+    animation: text-fade 3s infinite ease-in-out;
+    /* Violet Text Shadow */
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5); 
+}

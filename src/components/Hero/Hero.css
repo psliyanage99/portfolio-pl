@@ -1,0 +1,32 @@
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.bg-animate {
+  animation: zoomIn 15s ease-in-out infinite alternate;
+}
+
+@keyframes panBackground {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: top;
+  }
+  100% {
+    background-position: center;
+  }
+}
+
+.bg-pan {
+  animation: panBackground 20s ease-in-out infinite;
+}
+
+/* .hero-section {
+    border-bottom: 1px solid rgb(51, 54, 79);
+} */

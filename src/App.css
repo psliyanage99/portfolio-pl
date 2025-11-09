@@ -1,0 +1,107 @@
+#root {
+  margin: 0 auto;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* ==========================
+   THEME-AWARE SCROLLBAR
+   ========================== */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 40px !important;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scroll-track);
+  border-radius: 40px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb);
+  border-radius: 40px !important;
+  border: 2px solid var(--scroll-track);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-thumb-hover);
+  box-shadow: 0 0 10px var(--scroll-thumb-hover);
+}
+
+/* ===== Theme-based Variables ===== */
+html.light {
+  --scroll-track: #f3f4f6; 
+  --scroll-thumb: #a78bfa; 
+  --scroll-thumb-hover: #7c3aed; 
+  border-radius: 40px !important;
+}
+
+html.dark {
+  --scroll-track: #1e1e2f; 
+  --scroll-thumb: #8b5cf6 ; 
+  --scroll-thumb-hover: #a78bfa; 
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    /* Hide the track by making it transparent */
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    /* Keep the thumb visible and style it for the dark theme */
+    background: rgba(139, 92, 246, 0.4); /* Violet-600 with transparency */
+    border-radius: 10px;
+    border: 2px solid transparent; /* Ensures smooth edge blending */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.6);
+}

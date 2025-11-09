@@ -1,0 +1,31 @@
+
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* 2. Apply the Animation Class */
+.slide-left-animation {
+  /* Apply the animation */
+  animation: slide-left 20s linear infinite; 
+  /* 40s is the duration; linear ensures constant speed; infinite keeps it looping */
+}
+
+/* 3. Pausing the Animation on Hover (The key requirement!) */
+.slide-left-animation:hover {
+  /* Pauses the CSS animation when the mouse is over the element */
+  animation-play-state: paused;
+}
+
+/* Custom Tailwind Utility (Alternative to using the raw CSS above) */
+/* You could also add this to your Tailwind config using the 'arbitrary values' 
+   if you prefer not to touch the global CSS file, but using CSS is simpler here. */
+.hover\:paused:hover {
+    animation-play-state: paused;
+}

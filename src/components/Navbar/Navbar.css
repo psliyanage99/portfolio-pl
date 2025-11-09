@@ -1,0 +1,148 @@
+/* Modern Navbar Animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Animation Classes */
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 3s ease infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for mobile menu */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 8px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: rgba(17, 24, 39, 0.5);
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.5);
+  border-radius: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.7);
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Light mode support (if you need it later) */
+@media (prefers-color-scheme: light) {
+  .light\:text-gray-900 {
+    color: rgb(17, 24, 39);
+  }
+  
+  .light\:border-violet-300\/50 {
+    border-color: rgba(196, 181, 253, 0.5);
+  }
+  
+  .light\:hover\:bg-violet-100:hover {
+    background-color: rgb(237, 233, 254);
+  }
+  
+  .light\:bg-violet-600 {
+    background-color: rgb(124, 58, 237);
+  }
+  
+  .light\:text-gray-600 {
+    color: rgb(75, 85, 99);
+  }
+  
+  .light\:hover\:text-violet-700:hover {
+    color: rgb(109, 40, 217);
+  }
+}
+
+/* Performance optimizations */
+nav * {
+  will-change: transform, opacity;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
